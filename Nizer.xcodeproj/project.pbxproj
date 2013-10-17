@@ -150,6 +150,7 @@
 		34232EBD180FFD57001F12C8 /* Nizer */ = {
 			isa = PBXGroup;
 			children = (
+				34877F4018100D110050C823 /* iPad */,
 				34232EC6180FFD57001F12C8 /* NIAppDelegate.h */,
 				34232EC7180FFD57001F12C8 /* NIAppDelegate.m */,
 				34232EC9180FFD57001F12C8 /* Main.storyboard */,
@@ -197,6 +198,13 @@
 				34232F01180FFFB2001F12C8 /* GPUImageTests.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		34877F4018100D110050C823 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,7 +460,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nizer/Nizer-Prefix.pch";
 				INFOPLIST_FILE = "Nizer/Nizer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "/Users/Mauro/plasticpanda/Nizer/framework/**";
 				WRAPPER_EXTENSION = app;
 			};
@@ -466,7 +477,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nizer/Nizer-Prefix.pch";
 				INFOPLIST_FILE = "Nizer/Nizer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "/Users/Mauro/plasticpanda/Nizer/framework/**";
 				WRAPPER_EXTENSION = app;
 			};
