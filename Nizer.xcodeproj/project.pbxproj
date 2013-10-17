@@ -21,6 +21,11 @@
 		34232ED9180FFD57001F12C8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34232EBB180FFD57001F12C8 /* UIKit.framework */; };
 		34232EE1180FFD57001F12C8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34232EDF180FFD57001F12C8 /* InfoPlist.strings */; };
 		34232EE3180FFD57001F12C8 /* NizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34232EE2180FFD57001F12C8 /* NizerTests.m */; };
+		34232EEF180FFE8C001F12C8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34232EEE180FFE8C001F12C8 /* CoreMedia.framework */; };
+		34232EF1180FFE91001F12C8 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34232EF0180FFE91001F12C8 /* CoreVideo.framework */; };
+		34232EF3180FFE97001F12C8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34232EF2180FFE97001F12C8 /* OpenGLES.framework */; };
+		34232EF5180FFE9E001F12C8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34232EF4180FFE9E001F12C8 /* AVFoundation.framework */; };
+		34232EF7180FFEA5001F12C8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34232EF6180FFEA4001F12C8 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +35,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 34232EB3180FFD57001F12C8;
 			remoteInfo = Nizer;
+		};
+		34232EFE180FFFB2001F12C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34232EF8180FFFB1001F12C8 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
+		34232F00180FFFB2001F12C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34232EF8180FFFB1001F12C8 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A34414DDB1EC00852800;
+			remoteInfo = GPUImageTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -53,6 +72,12 @@
 		34232EDE180FFD57001F12C8 /* NizerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NizerTests-Info.plist"; sourceTree = "<group>"; };
 		34232EE0180FFD57001F12C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		34232EE2180FFD57001F12C8 /* NizerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NizerTests.m; sourceTree = "<group>"; };
+		34232EEE180FFE8C001F12C8 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		34232EF0180FFE91001F12C8 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		34232EF2180FFE97001F12C8 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		34232EF4180FFE9E001F12C8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		34232EF6180FFEA4001F12C8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		34232EF8180FFFB1001F12C8 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +85,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34232EF7180FFEA5001F12C8 /* QuartzCore.framework in Frameworks */,
+				34232EF5180FFE9E001F12C8 /* AVFoundation.framework in Frameworks */,
+				34232EF3180FFE97001F12C8 /* OpenGLES.framework in Frameworks */,
+				34232EF1180FFE91001F12C8 /* CoreVideo.framework in Frameworks */,
+				34232EEF180FFE8C001F12C8 /* CoreMedia.framework in Frameworks */,
 				34232EBA180FFD57001F12C8 /* CoreGraphics.framework in Frameworks */,
 				34232EBC180FFD57001F12C8 /* UIKit.framework in Frameworks */,
 				34232EB8180FFD57001F12C8 /* Foundation.framework in Frameworks */,
@@ -82,6 +112,7 @@
 		34232EAB180FFD57001F12C8 = {
 			isa = PBXGroup;
 			children = (
+				34232EF8180FFFB1001F12C8 /* GPUImage.xcodeproj */,
 				34232EBD180FFD57001F12C8 /* Nizer */,
 				34232EDC180FFD57001F12C8 /* NizerTests */,
 				34232EB6180FFD57001F12C8 /* Frameworks */,
@@ -101,6 +132,11 @@
 		34232EB6180FFD57001F12C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				34232EF6180FFEA4001F12C8 /* QuartzCore.framework */,
+				34232EF4180FFE9E001F12C8 /* AVFoundation.framework */,
+				34232EF2180FFE97001F12C8 /* OpenGLES.framework */,
+				34232EF0180FFE91001F12C8 /* CoreVideo.framework */,
+				34232EEE180FFE8C001F12C8 /* CoreMedia.framework */,
 				34232EB7180FFD57001F12C8 /* Foundation.framework */,
 				34232EB9180FFD57001F12C8 /* CoreGraphics.framework */,
 				34232EBB180FFD57001F12C8 /* UIKit.framework */,
@@ -150,6 +186,15 @@
 				34232EDF180FFD57001F12C8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		34232EF9180FFFB1001F12C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				34232EFF180FFFB2001F12C8 /* libGPUImage.a */,
+				34232F01180FFFB2001F12C8 /* GPUImageTests.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +261,12 @@
 			mainGroup = 34232EAB180FFD57001F12C8;
 			productRefGroup = 34232EB5180FFD57001F12C8 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 34232EF9180FFFB1001F12C8 /* Products */;
+					ProjectRef = 34232EF8180FFFB1001F12C8 /* GPUImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				34232EB3180FFD57001F12C8 /* Nizer */,
@@ -223,6 +274,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		34232EFF180FFFB2001F12C8 /* libGPUImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGPUImage.a;
+			remoteRef = 34232EFE180FFFB2001F12C8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		34232F01180FFFB2001F12C8 /* GPUImageTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GPUImageTests.octest;
+			remoteRef = 34232F00180FFFB2001F12C8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		34232EB2180FFD57001F12C8 /* Resources */ = {
@@ -383,6 +451,7 @@
 				GCC_PREFIX_HEADER = "Nizer/Nizer-Prefix.pch";
 				INFOPLIST_FILE = "Nizer/Nizer-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/Users/Mauro/plasticpanda/Nizer/framework/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -396,6 +465,7 @@
 				GCC_PREFIX_HEADER = "Nizer/Nizer-Prefix.pch";
 				INFOPLIST_FILE = "Nizer/Nizer-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/Users/Mauro/plasticpanda/Nizer/framework/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -461,6 +531,7 @@
 				34232EE8180FFD57001F12C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		34232EE9180FFD57001F12C8 /* Build configuration list for PBXNativeTarget "NizerTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +540,7 @@
 				34232EEB180FFD57001F12C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
