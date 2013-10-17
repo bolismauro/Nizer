@@ -9,6 +9,8 @@
 #import "NIViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "GPUImage.h"
+#import "UIView+snap.h"
+
 
 @interface NIViewController () {
     GPUImageStillCamera *videoCamera;
@@ -67,6 +69,17 @@
 }
 
 -(void) saveImage {
+    
+    UIView* snap = [self.filterView snapshotViewAfterScreenUpdates:NO];
+    [self.filterView addSubview:snap];
+    
+    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        float x = CGRectGetMidX(self.filterView.frame);
+        [snap setFrame:CGRectMake(x, self.filterView.frame.size.height, 0, 0)];
+    } completion:^(BOOL finished) {
+        [snap removeFromSuperview];
+    }];
+    
     [videoCamera capturePhotoAsImageProcessedUpToFilter:toonFilter withCompletionHandler:^(UIImage *processedImage, NSError *error) {
         [library writeImageToSavedPhotosAlbum:[processedImage CGImage] orientation:(ALAssetOrientation)[processedImage imageOrientation] completionBlock:^(NSURL *assetURL, NSError *error){
             if (error) {

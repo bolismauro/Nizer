@@ -14,7 +14,6 @@
 		34232EC4180FFD57001F12C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34232EC3180FFD57001F12C8 /* main.m */; };
 		34232EC8180FFD57001F12C8 /* NIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34232EC7180FFD57001F12C8 /* NIAppDelegate.m */; };
 		34232ECB180FFD57001F12C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34232EC9180FFD57001F12C8 /* Main.storyboard */; };
-		34232ECE180FFD57001F12C8 /* NIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34232ECD180FFD57001F12C8 /* NIViewController.m */; };
 		34232ED0180FFD57001F12C8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34232ECF180FFD57001F12C8 /* Images.xcassets */; };
 		34232ED7180FFD57001F12C8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34232ED6180FFD57001F12C8 /* XCTest.framework */; };
 		34232ED8180FFD57001F12C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34232EB7180FFD57001F12C8 /* Foundation.framework */; };
@@ -26,6 +25,8 @@
 		34232EF3180FFE97001F12C8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34232EF2180FFE97001F12C8 /* OpenGLES.framework */; };
 		34232EF5180FFE9E001F12C8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34232EF4180FFE9E001F12C8 /* AVFoundation.framework */; };
 		34232EF7180FFEA5001F12C8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34232EF6180FFEA4001F12C8 /* QuartzCore.framework */; };
+		34877F4A181024240050C823 /* NIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34877F49181024240050C823 /* NIViewController.m */; };
+		34877F4D181024D20050C823 /* UIView+snap.m in Sources */ = {isa = PBXBuildFile; fileRef = 34877F4C181024D20050C823 /* UIView+snap.m */; };
 		349476711810042300FFF74E /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34232EFF180FFFB2001F12C8 /* libGPUImage.a */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +67,6 @@
 		34232EC7180FFD57001F12C8 /* NIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIAppDelegate.m; sourceTree = "<group>"; };
 		34232ECA180FFD57001F12C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		34232ECC180FFD57001F12C8 /* NIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NIViewController.h; sourceTree = "<group>"; };
-		34232ECD180FFD57001F12C8 /* NIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIViewController.m; sourceTree = "<group>"; };
 		34232ECF180FFD57001F12C8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		34232ED5180FFD57001F12C8 /* NizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34232ED6180FFD57001F12C8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -79,6 +79,9 @@
 		34232EF4180FFE9E001F12C8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		34232EF6180FFEA4001F12C8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		34232EF8180FFFB1001F12C8 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
+		34877F49181024240050C823 /* NIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIViewController.m; sourceTree = "<group>"; };
+		34877F4B181024D20050C823 /* UIView+snap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+snap.h"; sourceTree = "<group>"; };
+		34877F4C181024D20050C823 /* UIView+snap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+snap.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,12 +153,14 @@
 		34232EBD180FFD57001F12C8 /* Nizer */ = {
 			isa = PBXGroup;
 			children = (
+				34877F4B181024D20050C823 /* UIView+snap.h */,
+				34877F4C181024D20050C823 /* UIView+snap.m */,
+				34877F49181024240050C823 /* NIViewController.m */,
 				34877F4018100D110050C823 /* iPad */,
 				34232EC6180FFD57001F12C8 /* NIAppDelegate.h */,
 				34232EC7180FFD57001F12C8 /* NIAppDelegate.m */,
 				34232EC9180FFD57001F12C8 /* Main.storyboard */,
 				34232ECC180FFD57001F12C8 /* NIViewController.h */,
-				34232ECD180FFD57001F12C8 /* NIViewController.m */,
 				34232ECF180FFD57001F12C8 /* Images.xcassets */,
 				34232EBE180FFD57001F12C8 /* Supporting Files */,
 			);
@@ -328,8 +333,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34232ECE180FFD57001F12C8 /* NIViewController.m in Sources */,
+				34877F4A181024240050C823 /* NIViewController.m in Sources */,
 				34232EC4180FFD57001F12C8 /* main.m in Sources */,
+				34877F4D181024D20050C823 /* UIView+snap.m in Sources */,
 				34232EC8180FFD57001F12C8 /* NIAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
