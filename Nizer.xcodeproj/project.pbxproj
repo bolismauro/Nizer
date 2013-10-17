@@ -26,6 +26,7 @@
 		34232EF3180FFE97001F12C8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34232EF2180FFE97001F12C8 /* OpenGLES.framework */; };
 		34232EF5180FFE9E001F12C8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34232EF4180FFE9E001F12C8 /* AVFoundation.framework */; };
 		34232EF7180FFEA5001F12C8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34232EF6180FFEA4001F12C8 /* QuartzCore.framework */; };
+		349476711810042300FFF74E /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34232EFF180FFFB2001F12C8 /* libGPUImage.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				349476711810042300FFF74E /* libGPUImage.a in Frameworks */,
 				34232EF7180FFEA5001F12C8 /* QuartzCore.framework in Frameworks */,
 				34232EF5180FFE9E001F12C8 /* AVFoundation.framework in Frameworks */,
 				34232EF3180FFE97001F12C8 /* OpenGLES.framework in Frameworks */,
