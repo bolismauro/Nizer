@@ -7,10 +7,14 @@
 //
 
 #import "NIViewController.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 #import "GPUImage.h"
 
 @interface NIViewController () {
-    GPUImageVideoCamera *videoCamera;
+    GPUImageStillCamera *videoCamera;
+    GPUImageBilateralFilter* bilateralFilter;
+    GPUImageToonFilter* toonFilter;
+    ALAssetsLibrary *library;
 }
 @property IBOutlet GPUImageView* filterView;
 @end
@@ -20,6 +24,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    library = [[ALAssetsLibrary alloc] init];
 	[self setupInterface];
 }
 
@@ -31,7 +36,7 @@
 
 
 - (void) setupInterface {
-    videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionBack];
+    videoCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionBack];
     //    videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionFront];
     //    videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPreset1280x720 cameraPosition:AVCaptureDevicePositionBack];
     //    videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPreset1920x1080 cameraPosition:AVCaptureDevicePositionBack];
@@ -40,13 +45,13 @@
     videoCamera.horizontallyMirrorFrontFacingCamera = NO;
     videoCamera.horizontallyMirrorRearFacingCamera = NO;
     
-    GPUImageBilateralFilter* bilateralFilter  = [[GPUImageBilateralFilter alloc] init];
-    [bilateralFilter setValue:@5 forKey:@"blurSize"];
+    bilateralFilter  = [[GPUImageBilateralFilter alloc] init];
+    [bilateralFilter setValue:@100 forKey:@"blurSize"];
     [bilateralFilter setValue:@5 forKey:@"distanceNormalizationFactor"];
 
-    GPUImageToonFilter* toonFilter = [[GPUImageToonFilter alloc] init];
-    [toonFilter setValue:@0.7 forKey:@"threshold"];
-    [toonFilter setValue:@15 forKey:@"quantizationLevels"];
+    toonFilter = [[GPUImageToonFilter alloc] init];
+    [toonFilter setValue:@0.5 forKey:@"threshold"];
+    [toonFilter setValue:@20 forKey:@"quantizationLevels"];
     
     
     self.filterView.fillMode = kGPUImageFillModePreserveAspectRatioAndFill;
@@ -56,6 +61,21 @@
     [toonFilter addTarget:self.filterView];
     
     [videoCamera startCameraCapture];
+    
+    UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(saveImage)];
+    [self.filterView addGestureRecognizer:tapGesture];
+}
+
+-(void) saveImage {
+    [videoCamera capturePhotoAsImageProcessedUpToFilter:toonFilter withCompletionHandler:^(UIImage *processedImage, NSError *error) {
+        [library writeImageToSavedPhotosAlbum:[processedImage CGImage] orientation:(ALAssetOrientation)[processedImage imageOrientation] completionBlock:^(NSURL *assetURL, NSError *error){
+            if (error) {
+                NSLog(@"error %@", error);
+            } else {
+                NSLog(@"done %@", assetURL);
+            }
+        }];
+    }];
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
