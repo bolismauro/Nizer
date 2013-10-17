@@ -48,11 +48,11 @@
     videoCamera.horizontallyMirrorRearFacingCamera = NO;
     
     bilateralFilter  = [[GPUImageBilateralFilter alloc] init];
-    [bilateralFilter setValue:@100 forKey:@"blurSize"];
-    [bilateralFilter setValue:@5 forKey:@"distanceNormalizationFactor"];
+    [bilateralFilter setValue:@10 forKey:@"blurSize"];
+    [bilateralFilter setValue:@10 forKey:@"distanceNormalizationFactor"];
 
     toonFilter = [[GPUImageToonFilter alloc] init];
-    [toonFilter setValue:@0.5 forKey:@"threshold"];
+    [toonFilter setValue:@0.3 forKey:@"threshold"];
     [toonFilter setValue:@20 forKey:@"quantizationLevels"];
     
     
