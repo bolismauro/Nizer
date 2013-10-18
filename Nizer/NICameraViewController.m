@@ -8,13 +8,13 @@
 
 #import <AssetsLibrary/AssetsLibrary.h>
 
-#import "NIViewController.h"
+#import "NICameraViewController.h"
 #import "GPUImage.h"
 #import "ALAssetsLibrary+CustomPhotoAlbum.h"
 
 #define kAlbumName @"Nize"
 
-@interface NIViewController () {
+@interface NICameraViewController () {
     GPUImageStillCamera *videoCamera;
     GPUImageBilateralFilter* bilateralFilter;
     GPUImageToonFilter* toonFilter;
@@ -24,10 +24,9 @@
 @property IBOutlet GPUImageView* filterView;
 @end
 
-@implementation NIViewController
+@implementation NICameraViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     library = [[ALAssetsLibrary alloc] init];
 	[self setupInterface];
