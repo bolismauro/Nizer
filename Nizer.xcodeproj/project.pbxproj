@@ -26,8 +26,8 @@
 		34232EF5180FFE9E001F12C8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34232EF4180FFE9E001F12C8 /* AVFoundation.framework */; };
 		34232EF7180FFEA5001F12C8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34232EF6180FFEA4001F12C8 /* QuartzCore.framework */; };
 		34877F4A181024240050C823 /* NIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34877F49181024240050C823 /* NIViewController.m */; };
-		34877F4D181024D20050C823 /* UIView+snap.m in Sources */ = {isa = PBXBuildFile; fileRef = 34877F4C181024D20050C823 /* UIView+snap.m */; };
 		349476711810042300FFF74E /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34232EFF180FFFB2001F12C8 /* libGPUImage.a */; };
+		34F0DEE718113ABD00C57814 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F0DEE618113ABD00C57814 /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,8 +80,8 @@
 		34232EF6180FFEA4001F12C8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		34232EF8180FFFB1001F12C8 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		34877F49181024240050C823 /* NIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIViewController.m; sourceTree = "<group>"; };
-		34877F4B181024D20050C823 /* UIView+snap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+snap.h"; sourceTree = "<group>"; };
-		34877F4C181024D20050C823 /* UIView+snap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+snap.m"; sourceTree = "<group>"; };
+		34F0DEE518113ABD00C57814 /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
+		34F0DEE618113ABD00C57814 /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,8 +153,7 @@
 		34232EBD180FFD57001F12C8 /* Nizer */ = {
 			isa = PBXGroup;
 			children = (
-				34877F4B181024D20050C823 /* UIView+snap.h */,
-				34877F4C181024D20050C823 /* UIView+snap.m */,
+				34F0DEEB18113AC000C57814 /* vendor */,
 				34877F49181024240050C823 /* NIViewController.m */,
 				34877F4018100D110050C823 /* iPad */,
 				34232EC6180FFD57001F12C8 /* NIAppDelegate.h */,
@@ -210,6 +209,23 @@
 			children = (
 			);
 			name = iPad;
+			sourceTree = "<group>";
+		};
+		34F0DEEB18113AC000C57814 /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				34F0DEEC18113AC800C57814 /* ALAAssetsLibraryCategory */,
+			);
+			name = vendor;
+			sourceTree = "<group>";
+		};
+		34F0DEEC18113AC800C57814 /* ALAAssetsLibraryCategory */ = {
+			isa = PBXGroup;
+			children = (
+				34F0DEE518113ABD00C57814 /* ALAssetsLibrary+CustomPhotoAlbum.h */,
+				34F0DEE618113ABD00C57814 /* ALAssetsLibrary+CustomPhotoAlbum.m */,
+			);
+			name = ALAAssetsLibraryCategory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,9 +349,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34F0DEE718113ABD00C57814 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
 				34877F4A181024240050C823 /* NIViewController.m in Sources */,
 				34232EC4180FFD57001F12C8 /* main.m in Sources */,
-				34877F4D181024D20050C823 /* UIView+snap.m in Sources */,
 				34232EC8180FFD57001F12C8 /* NIAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

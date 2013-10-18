@@ -6,11 +6,13 @@
 //  Copyright (c) 2013 Plasticpanda. All rights reserved.
 //
 
-#import "NIViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
-#import "GPUImage.h"
-#import "UIView+snap.h"
 
+#import "NIViewController.h"
+#import "GPUImage.h"
+#import "ALAssetsLibrary+CustomPhotoAlbum.h"
+
+#define kAlbumName @"Nize"
 
 @interface NIViewController () {
     GPUImageStillCamera *videoCamera;
@@ -18,6 +20,7 @@
     GPUImageToonFilter* toonFilter;
     ALAssetsLibrary *library;
 }
+
 @property IBOutlet GPUImageView* filterView;
 @end
 
@@ -49,11 +52,13 @@
     
     bilateralFilter  = [[GPUImageBilateralFilter alloc] init];
     [bilateralFilter setValue:@10 forKey:@"blurSize"];
-    [bilateralFilter setValue:@10 forKey:@"distanceNormalizationFactor"];
+    [bilateralFilter setValue:@5 forKey:@"distanceNormalizationFactor"];
 
     toonFilter = [[GPUImageToonFilter alloc] init];
-    [toonFilter setValue:@0.3 forKey:@"threshold"];
-    [toonFilter setValue:@20 forKey:@"quantizationLevels"];
+    [toonFilter setValue:@0.0009 forKey:@"texelHeight"];
+    [toonFilter setValue:@0.0009 forKey:@"texelWidth"];
+    [toonFilter setValue:@0.3  forKey:@"threshold"];
+    [toonFilter setValue:@10 forKey:@"quantizationLevels"];
     
     
     self.filterView.fillMode = kGPUImageFillModePreserveAspectRatioAndFill;
@@ -81,12 +86,11 @@
     }];
     
     [videoCamera capturePhotoAsImageProcessedUpToFilter:toonFilter withCompletionHandler:^(UIImage *processedImage, NSError *error) {
-        [library writeImageToSavedPhotosAlbum:[processedImage CGImage] orientation:(ALAssetOrientation)[processedImage imageOrientation] completionBlock:^(NSURL *assetURL, NSError *error){
-            if (error) {
-                NSLog(@"error %@", error);
-            } else {
-                NSLog(@"done %@", assetURL);
-            }
+        [library saveImage:processedImage toAlbum:kAlbumName completion:^(NSURL *assetURL, NSError *error) {
+            NSLog(@"done %@", assetURL);
+        } failure:^(NSError *error) {
+            // TODO: let the user aware of this
+            NSLog(@"error %@", error);
         }];
     }];
 }
